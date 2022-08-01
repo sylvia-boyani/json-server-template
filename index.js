@@ -1,17 +1,17 @@
- const express = require('express')
- const app = express()
- const videoData = require("./videos.json")
+const express = require('express')
+const app = express()
+const playerData = require('./videos.json')
 
- const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 
- app.get('/', (req, res) => {
-    res.send("url")
- })
+app.get('/', (req, res) => {
+    res.send("Manchester United Players")
+})
 
- app.get('/videoData', (req, res) => {
-    res.send("videoData")
- })
- 
- app.listen(port, () => {
-    console.log(`App is listening at port ${port}`)
- })
+app.get('/players', (req, res) => {
+    res.send(playerData)
+})
+
+app.listen(port, () => {
+    console.log(`App is listening to port ${port}`)
+})
